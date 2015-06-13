@@ -4,9 +4,10 @@
 2. Generate Ctags db for /usr/include and place in ~/.vim/tags
 	ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /usr/include
 
-3. Install clang, libclang, ncurses, read-line
-	sudo apt-get install clang
-	sudo apt-get install libclang
+3. Install CMake, clang, libclang, ncurses, read-line
+	sudo apt-get install CMake
+  sudo apt-get install clang
+	sudo apt-get install llvm
 	sudo apt-get install libclang-dev
 	sudo apt-get install libncurses5-dev
 	sudo apt-get install libncurses5
