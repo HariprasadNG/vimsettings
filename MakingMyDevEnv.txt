@@ -1,0 +1,44 @@
+1. Install Ctags 
+	sudo apt-get install exuberant-ctags
+
+2. Generate Ctags db for /usr/include and place in ~/.vim/tags
+	ctags -R --c++-kinds=+p --fields=+iaS --extra=+q /usr/include
+
+3. Install clang, libclang, ncurses, read-line
+	sudo apt-get install clang
+	sudo apt-get install libclang
+	sudo apt-get install libclang-dev
+	sudo apt-get install libncurses5-dev
+	sudo apt-get install libncurses5
+	sudo apt-get install readline6
+	sudo apt-get install readline6-dev
+
+4. Install vim_clang_autocomplete 
+	http://github.com/Rip-Rip/clang_complete 
+	cd clang_complete
+	make install
+
+
+5. Install clewn
+	a. Install clewn
+		download latest clewn .tar from sourceforce.net
+		untar using command tar -xvf <clewnpackage>
+		cd <clewnpage>
+		./configure
+		make install
+	b. Install clewn-vim
+		git clone https://github.com/lekv/vim-clewn
+		make
+
+6. Install YouComplete http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/ 
+	cd ~/.vim/bundle
+	git clone https://github.com/Valloric/YouCompleteMe.git
+	cd YouCompleteMe
+	git submodule update --init --recursive
+	/install.sh --clang-completer --system-clang
+	Add below lines to you .vimrc file or keymapping plugin file
+	let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+	let g:ycm_key_list_select_completion=[]
+	let g:ycm_key_list_previous_completion=[]
+
+	
