@@ -31,15 +31,19 @@
 		git clone https://github.com/lekv/vim-clewn
 		make
 
+###Best Autocomplete pluging based clang###
 6. Install YouComplete http://www.alexeyshmalko.com/2014/youcompleteme-ultimate-autocomplete-plugin-for-vim/ 
 	cd ~/.vim/bundle
 	git clone https://github.com/Valloric/YouCompleteMe.git
 	cd YouCompleteMe
 	git submodule update --init --recursive
-	/install.sh --clang-completer --system-clang
+	/install.sh --clang-completer --system-libclang
 	Add below lines to you .vimrc file or keymapping plugin file
 	let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 	let g:ycm_key_list_select_completion=[]
 	let g:ycm_key_list_previous_completion=[]
 
-	
+7. Installing cscope: Note this is required when ctags matches more than 1 tag
+  sudo apt-get install cscope
+
+
