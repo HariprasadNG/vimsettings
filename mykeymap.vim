@@ -28,6 +28,8 @@ set shiftwidth=4
 set softtabstop=4
 set ai
 set shiftwidth=4
+set nu
+set list
 "set smartindent
 set cindent
 noremap <F6> v%
