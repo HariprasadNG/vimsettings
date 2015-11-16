@@ -19,6 +19,12 @@ function finder {
     find . -name "$1" | xargs grep $2 $3 2>/dev/null; 
 }
 
+alias grep=grep --color=auto
+alias fgrep=fgrep --color=auto
+alias egrep=egrep --color=auto
+
+
+####All git help####
 function glog {
     git log --oneline --color $1 $2;
 }

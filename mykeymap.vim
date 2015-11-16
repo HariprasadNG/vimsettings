@@ -33,6 +33,6 @@ set list
 "set smartindent
 set cindent
 noremap <F6> v%
-inoremap { {<CR>}<UP><ESC>A
+inoremap {<CR> {<CR>}<UP><ESC>o
 "inoremap ( ()
 
