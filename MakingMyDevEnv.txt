@@ -40,6 +40,8 @@
 	./install.sh --clang-completer --system-libclang
         ### If the support for the go code is also required.
 	./install.sh --clang-completer --go-codecompleter --system-libclang
+
+	#May be not required do only if required#
 	Add below lines to you .vimrc file or keymapping plugin file
 	let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 	let g:ycm_key_list_select_completion=[]
@@ -48,4 +50,12 @@
 7. Installing cscope: Note this is required when ctags matches more than 1 tag
   sudo apt-get install cscope
 
-
+8. Installing gnuglobal.
+	sudo apt-get install global
+	#create binary tags table
+	gtags
+	#create HTML based source tags
+	htags -gsanohITvt 'Welcome to IVE source tour!'
+	firefox HTML/index.html
+	#Configure gtags with vim read
+	http://www.gnu.org/software/global/globaldoc_toc.html#Vim-editor
