@@ -59,3 +59,12 @@
 	firefox HTML/index.html
 	#Configure gtags with vim read
 	http://www.gnu.org/software/global/globaldoc_toc.html#Vim-editor
+
+9. After running the ctags 
+	run perl constuctortag.pl >> tags
+	open tags file and change
+        !_TAG_FILE_SORTED	1
+	!_TAG_FILE_SORTED	0
+	now you can find where a given class might have instantiated usng new with the help of the command cc:<class_name>
+	eg: cc:DSWSRequest
+	NOTE:This script is written by hari so may have issues too.
