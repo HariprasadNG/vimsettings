@@ -14,7 +14,7 @@
 	sudo apt-get install readline6
 	sudo apt-get install readline6-dev
 
-4. Install vim_clang_autocomplete 
+4. Install vim_clang_autocomplete --> This is not required since we are installing YouCompleteMe
 	http://github.com/Rip-Rip/clang_complete 
 	cd clang_complete
 	make install
@@ -46,6 +46,22 @@
 	let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 	let g:ycm_key_list_select_completion=[]
 	let g:ycm_key_list_previous_completion=[]
+   ---------------------------EASY METHOD-------------------------------------
+   https://vi.stackexchange.com/questions/7470/how-to-install-youcompleteme-with-clang-completer-offline/7471#7471?newreg=bdd7b38910194c9dacfed59f744cdba0
+   Install vim 7.4:
+
+   brew install vim --> Required in MAC
+
+   Note: If you are using mac operating system, make sure you create an alias in your bash_profile pointing to macvim i.e. which mvim
+   Install Vundle
+   Add Plugin 'Valloric/YouCompleteMe' to ~/.vimrc and run :PluginInstall in vim.
+   Download clang+llvm-3.8.0-x86_64-apple-darwin.tar.xz from Pre-Built Binaries section of LLVM Download Page manually (now it is the latest version).
+   Make the download directory:
+   mkdir -p ~/.vim/bundle/YouCompleteMe/third_party/ycmd/clang_archives
+   Put the downloaded file in that directory.
+   Compile YouCompleteMe:
+   cd ~/.vim/bundle/YouCompleteMe
+   ./install.py --clang-completer)
 
 7. Installing cscope: Note this is required when ctags matches more than 1 tag
   sudo apt-get install cscope
