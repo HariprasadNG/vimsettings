@@ -4,6 +4,7 @@
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
+:set hlsearch
 :inoremap {<CR> {<CR>}<Esc>O
 :inoremap ( ()<Left>
 :inoremap [ []<Left>
