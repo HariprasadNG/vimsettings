@@ -40,10 +40,10 @@
 	./install.sh --clang-completer --system-libclang
         ### If the support for the go code is also required.
 	./install.sh --clang-completer --go-codecompleter --system-libclang
-
-	#May be not required do only if required#
-	Add below lines to you .vimrc file or keymapping plugin file
-	let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+	
+	##Add below lines to you .vimrc file or keymapping plugin file
+	##Copy this file from this rep to !/.vim/
+	let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py"
 	let g:ycm_key_list_select_completion=[]
 	let g:ycm_key_list_previous_completion=[]
    ---------------------------EASY METHOD-------------------------------------
