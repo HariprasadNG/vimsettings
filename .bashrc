@@ -22,6 +22,7 @@ function finder {
 alias grep=grep --color=auto
 alias fgrep=fgrep --color=auto
 alias egrep=egrep --color=auto
+alias startalldockers="docker ps -a|awk -F\" \" '{print $1}'|xargs docker start"
 
 
 ####All git help####
