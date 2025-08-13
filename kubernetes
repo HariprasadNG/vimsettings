@@ -1,0 +1,50 @@
+k3s-uninstall.sh
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION="v1.21.1+k3s1" INSTALL_K3S_SKIP_ENABLE=true sh -s - --disable traefik
+
+rm -rf /var/lib/rancher/
+
+
+/etc/ztnaversion---> Initial Helm will that will be donwloadedztna
+systemctl start k3s.service
+kubectl create namespace ztna
+sudo kubectl get pods -A
+sudo helm list --namespace ztna --kubeconfig /etc/rancher/k3s/k3s.yaml 
+sudo k3s ctr images import ./legacy.tar 
+	sudo helm upgrade ztna ./ztna --namespace ztna --kubeconfig /etc/rancher/k3s/k3s.yaml
+kubectl exec -it --namespace ztna envoy-proxy-dlpnabled-qlrck sh
+kubectl logs --namespace ztna control-plane-5877b76b6c-8sg7w
+bazel run //envoy:dlpproxy-image.tar
+bazel build --platforms=@io_bazel_rules_go//go/toolchain:linux_amd64 '//cloudagent/cmd/cloudagent:cloudagent-image.tar' --sandbox_debug
+wget -O - http://127.0.0.1:8001/config_dump ---> to the Envoy proxy
+
+
+helm install ztna --kubeconfig /etc/rancher/k3s/k3s.yaml --namespace ztna --create-namespace ztna
+
+
+bazel run //:gazelle -- update-repos -from_file=go.mod -to_macro=deps.bzl%go_dependencies
+Bazel run //:gazelle
+
+
+bazel build --platforms=@io_bazel_rules_go//go/toolchain:linux_amd64 '//controlplane/cmd/controlplane:controlplane-image.tar' --sandbox_debug
+
+admin
+ZtnaAdm!n@123
+
+For creation on namespace yamls etc…. Refere /home/start-ztna.sh
+kubectl apply -f guestbook-all-in-one.yaml
+
+
+ bazel run "//envoy:dlpproxy-image"
+docker save (image name)> /home/save.tar
+
+kubectl -n ztna exec -it control-plane-84d6667596-fh884 -- sh (/tmp/policybundle.tar.gz)
+Request from Filter.
+curl --location --request POST 'http://192.168.1.8:8181/v1/data/envoy/dlp?explain=full&pretty' \
+--header 'authority: guest.ztna.ga' \
+--header 'Content-Type: application/json' \
+--data-raw '{"input": 
+    { 
+    "text": "{\"data\": \",Working,Working now too,SN123456789,Mobile. No 9886321394,,SN 9886321394,DL 123,My Drive AC431234\"}",
+    "language": "en"
+    }
+}'
