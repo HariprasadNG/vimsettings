@@ -1,0 +1,38 @@
+select relname, n_live_tup,seq_scan,idx_scan from pg_stat_user_tables order by n_live_tup desc;
+select * from pg_stat_activity order by backend_start desc limit 10;
+select * from pg_stat_activity order by backend_start > now() - interval '1' minute;
+
+//To check non indexd scans
+select relname, seq_scan, idx_scan from pg_stat_user_tables where relname='tblhost' order by seq_scan;
+
+
+SELECT schemaname,
+       relname,
+       n_live_tup,
+       n_dead_tup,
+       round(pg_total_relation_size(relid)/1024/1024) as size_mb
+FROM pg_stat_user_tables
+ORDER BY n_dead_tup DESC
+LIMIT 10;
+ 
+ 
+-- Check table size and index size
+SELECT
+  pg_size_pretty(pg_total_relation_size('client_time_series')) as total_size,
+  pg_size_pretty(pg_table_size('client_time_series')) as table_size,
+  pg_size_pretty(pg_indexes_size('client_time_series')) as index_size,
+  n_live_tup, n_dead_tup
+FROM pg_stat_user_tables
+WHERE relname = 'client_time_series';
+ 
+ 
+-- Check for long-running transactions
+SELECT pid, 
+       usename,
+       age(clock_timestamp(), xact_start) as xact_age,
+       age(clock_timestamp(), query_start) as query_age,
+       state,
+       query
+FROM pg_stat_activity 
+WHERE xact_start IS NOT NULL 
+ORDER BY xact_age DESC;
